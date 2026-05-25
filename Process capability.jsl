@@ -1,0 +1,13 @@
+
+Process Capability(
+	Process Variables( :Pred Formula CD 2 ),
+	Spec Limits( :Pred Formula CD 2( LSL( 0.5 ), Target( 0.65 ), USL( 0.8 ) ) ),
+	Moving Range Method( Average of Moving Ranges ),
+	Within Sigma Summary Report( 1 ),
+	Overall Sigma Summary Report( 1 ),
+	Capability Box Plots( 1 ),
+	Individual Detail Reports( 0 ),
+	Goal Plot( 1 ),
+	Capability Index Plot( 1 ),
+	Process Performance Plot( 0 )
+);

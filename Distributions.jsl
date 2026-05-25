@@ -1,0 +1,40 @@
+
+Distribution(
+	Stack( 1 ),
+	Continuous Distribution(
+		Column( :Dose ),
+		Horizontal Layout( 1 ),
+		Vertical( 0 ),
+		Process Capability( 0 )
+	),
+	Continuous Distribution(
+		Column( :Focus ),
+		Horizontal Layout( 1 ),
+		Vertical( 0 ),
+		Process Capability( 0 )
+	),
+	Continuous Distribution(
+		Column( :SPin_Speed ),
+		Horizontal Layout( 1 ),
+		Vertical( 0 ),
+		Process Capability( 0 )
+	),
+	Continuous Distribution(
+		Column( :PEB_Temp ),
+		Horizontal Layout( 1 ),
+		Vertical( 0 ),
+		Process Capability( 0 )
+	),
+	Continuous Distribution(
+		Column( :DEV_Temp ),
+		Horizontal Layout( 1 ),
+		Vertical( 0 ),
+		Process Capability( 0 )
+	),
+	Continuous Distribution(
+		Column( :CD ),
+		Horizontal Layout( 1 ),
+		Vertical( 0 ),
+		Process Capability( 0 )
+	)
+);

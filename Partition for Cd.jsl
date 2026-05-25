@@ -1,0 +1,10 @@
+
+Partition(
+	Y( :CD ),
+	X( :Dose, :Focus, :SPin_Speed, :PEB_Temp, :DEV_Temp ),
+	Informative Missing( 1 ),
+	Initial Splits( :Dose >= 35, {:PEB_Temp >= 130} ),
+	SendToReport(
+		Dispatch( {}, "Partition Report", FrameBox, {Frame Size( 480, 56 )} )
+	)
+);

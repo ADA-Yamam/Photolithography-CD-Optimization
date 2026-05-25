@@ -1,0 +1,31 @@
+
+Fit Model(
+	Y( :CD ),
+	Effects(
+		:Dose, :Focus, :SPin_Speed, :PEB_Temp, :DEV_Temp, :Dose * :Focus,
+		:Dose * :SPin_Speed, :Dose * :PEB_Temp, :Dose * :DEV_Temp,
+		:Focus * :SPin_Speed, :Focus * :PEB_Temp, :Focus * :DEV_Temp,
+		:SPin_Speed * :PEB_Temp, :SPin_Speed * :DEV_Temp, :PEB_Temp * :DEV_Temp
+	),
+	Personality( "Standard Least Squares" ),
+	Emphasis( "Effect Screening" ),
+	Run(
+		:CD << {Summary of Fit( 0 ), Analysis of Variance( 0 ),
+		Parameter Estimates( 1 ), Effect Details( 0 ), Lack of Fit( 0 ),
+		Sorted Estimates( 0 ), Plot Actual by Predicted( 1 ), Plot Regression( 0 ),
+		Plot Residual by Predicted( 1 ), Plot Studentized Residuals( 1 ),
+		Plot Effect Leverage( 0 ), Plot Residual by Normal Quantiles( 0 ),
+		Box Cox Y Transformation( 0 ), Profiler(
+			1,
+			Confidence Intervals( 1 ),
+			Desirability Functions( 1 ),
+			Term Value(
+				:Dose( 35, Lock( 0 ), Show( 1 ) ),
+				:Focus( 0.000000000201, Lock( 0 ), Show( 1 ) ),
+				:SPin_Speed( 2000, Lock( 0 ), Show( 1 ) ),
+				:PEB_Temp( 130, Lock( 0 ), Show( 1 ) ),
+				:DEV_Temp( 20, Lock( 0 ), Show( 1 ) )
+			)
+		)}
+	)
+);
