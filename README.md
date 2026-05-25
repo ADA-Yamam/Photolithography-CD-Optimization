@@ -1,7 +1,19 @@
-# Photolithography CD Optimization 
+# Photolithography CD Optimization for TSMC
 
 ## Project Overview
 Optimization of Critical Dimension (CD) in photolithography process using Six Sigma (DMAIC) and Lean methodologies.
+
+## Physical & Chemical Knowledge Application
+
+Before any statistical analysis, root causes were hypothesized based on photolithography physics and chemistry:
+
+| Factor | Physical/Chemical Relationship | Expected Effect |
+|--------|-------------------------------|-----------------|
+| **Dose** | Higher dose → more photons break PAC molecules → more acid generation → more resist dissolution | Dose ↑ → CD ↓ |
+| **PEB_Temp** | Higher temperature accelerates acid diffusion and deprotection reaction | PEB_Temp ↑ → CD ↓ |
+| **Focus** | Defocus blurs the aerial image, enlarging the printed pattern | \|Focus\| ↑ → CD ↑ |
+
+This knowledge directed our analysis immediately to **Dose** and **PEB_Temp** as primary suspects, saving time by avoiding trial-and-error testing of irrelevant factors.
 
 ## Six Sigma DMAIC Application
 
@@ -36,7 +48,7 @@ Optimization of Critical Dimension (CD) in photolithography process using Six Si
 | File | Description |
 |------|-------------|
 | `Custom Design.jmp` | Main JMP data table with all analyses and embedded scripts |
-| `Lithography.txt` | **Complete step-by-step methodology** - how the analysis was performed from start to end |
+| `Lithography.txt` | Complete step-by-step methodology - how the analysis was performed from start to end |
 | `photolithography_data.csv` | Raw experimental data |
 | `*.jsl` | Individual JMP script files for quick access to specific analyses |
 
@@ -50,13 +62,13 @@ Optimization of Critical Dimension (CD) in photolithography process using Six Si
 
 ## Quick Access to Individual Scripts
 For faster access to specific analyses, open any `.jsl` file directly in JMP:
-- `Distributions.jsl` - Distribution analysis of CD and factors
-- `Process capability.jsl` - Capability analysis (Cpk before optimization)
-- `Fit-Response Cd.jsl` - Regression model (R²=0.989)
-- `Distributions_Residual Cd.jsl` - Residuals analysis (Shapiro-Wilk, Durbin-Watson)
-- `Partition for Cd.jsl` - Decision tree (Dose > 35 as first split)
-- `prediction Profiler.jsl` - Optimal settings (Dose=35, PEB_Temp=130)
-- `Matched pairs.jsl` - Paired t-test (P=0.0001)
+- `Distributions.jsl` - Distribution analysis (Mean CD = 0.726μm)
+- `Process capability.jsl` - Capability analysis (Cpk = 0.44 before optimization)
+- `Fit-Response Cd.jsl` - Regression model (R² = 0.989)
+- `Distributions_Residual Cd.jsl` - Residuals analysis (Shapiro-Wilk P = 0.3458, Durbin-Watson = 1.81)
+- `Partition for Cd.jsl` - Decision tree (Dose > 35 gives CD = 0.626μm)
+- `prediction Profiler.jsl` - Optimal settings (Dose = 35, PEB_Temp = 130, CD = 0.6608μm)
+- `Matched pairs.jsl` - Paired t-test (P = 0.0001)
 
 ## Complete Methodology Reference
 For the full step-by-step workflow including:
@@ -71,6 +83,7 @@ For the full step-by-step workflow including:
 - **JMP:** Distribution, Capability, Fit Y by X, Fit Model, Regression, Residuals Analysis (Shapiro-Wilk, Durbin-Watson), Partition (Decision Tree), DOE (Response Surface), Prediction Profiler, Matched Pairs (Paired t-test), Predictive Modeling (Prediction Formula)
 - **Six Sigma:** DMAIC (Define, Measure, Analyze, Improve, Control)
 - **Lean:** Waste elimination, Variation reduction, Process standardization
+- **Physical & Chemical Knowledge:** Photolithography physics (Dose, PEB_Temp, Focus effects on CD)
 
 ## Author
 ADA-Yamam
