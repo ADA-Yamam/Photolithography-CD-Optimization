@@ -1,5 +1,4 @@
-# Photolithography-CD-Optimization
-# Photolithography CD Optimization for TSMC
+# Photolithography CD Optimization 
 
 ## Project Overview
 Optimization of Critical Dimension (CD) in photolithography process using Six Sigma (DMAIC) and Lean methodologies.
@@ -33,14 +32,48 @@ Optimization of Critical Dimension (CD) in photolithography process using Six Si
 - PEB_Temp: 130°C
 - Focus: 0 μm
 
-## File Contents
-- `photolithography_analysis.jmp` - All data, analyses, scripts, and JMP output
+## Repository Files
+| File | Description |
+|------|-------------|
+| `Custom Design.jmp` | Main JMP data table with all analyses and embedded scripts |
+| `Lithography.txt` | **Complete step-by-step methodology** - how the analysis was performed from start to end |
+| `photolithography_data.csv` | Raw experimental data |
+| `*.jsl` | Individual JMP script files for quick access to specific analyses |
 
 ## How to Open
-1. Open JMP software
-2. File → Open → Select `photolithography_analysis.jmp`
+1. Click on `Custom Design.jmp` in this repository
+2. Click **View** (or download and open in JMP)
+3. The file will download to your computer
+4. Open JMP software
+5. `File → Open` → Select the downloaded `Custom Design.jmp`
+6. All data and scripts will load automatically
+
+## Quick Access to Individual Scripts
+For faster access to specific analyses, open any `.jsl` file directly in JMP:
+- `Distributions.jsl` - Distribution analysis of CD and factors
+- `Process capability.jsl` - Capability analysis (Cpk before optimization)
+- `Fit-Response Cd.jsl` - Regression model (R²=0.989)
+- `Distributions_Residual Cd.jsl` - Residuals analysis (Shapiro-Wilk, Durbin-Watson)
+- `Partition for Cd.jsl` - Decision tree (Dose > 35 as first split)
+- `prediction Profiler.jsl` - Optimal settings (Dose=35, PEB_Temp=130)
+- `Matched pairs.jsl` - Paired t-test (P=0.0001)
+
+## Complete Methodology Reference
+For the full step-by-step workflow including:
+- Data cleaning process
+- All JMP commands used
+- Statistical test selection rationale
+- Physical interpretation of results
+
+**Open `Lithography.txt`** in this repository to read the complete methodology documentation.
 
 ## Tools Used
-- JMP (Distribution, Capability, Fit Y by X, Regression, Residuals, Partition, DOE, Profiler, Paired t-test, Predictive Modeling,....)
-- Six Sigma (DMAIC)
-- Lean (Waste elimination, Variation reduction)
+- **JMP:** Distribution, Capability, Fit Y by X, Fit Model, Regression, Residuals Analysis (Shapiro-Wilk, Durbin-Watson), Partition (Decision Tree), DOE (Response Surface), Prediction Profiler, Matched Pairs (Paired t-test), Predictive Modeling (Prediction Formula)
+- **Six Sigma:** DMAIC (Define, Measure, Analyze, Improve, Control)
+- **Lean:** Waste elimination, Variation reduction, Process standardization
+
+## Author
+ADA-Yamam
+
+## Date
+May 2026
